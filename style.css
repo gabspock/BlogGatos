@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: border-box;
+  
+  font-family: 'Mulish', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --azul-header: hsl(195, 91%, 25%);
+  --cinza-claro-search: hsla(0, 0%, 100%, 0.2);
+  --branco: hsl(0, 0%, 100%);
+  --preto: hsl(240, 5%, 7%);
+}
+
+body {
+  /* Define a largura máxima para o conteúdo */
+  max-width: 90rem;
+}
+
+.header {
+  display: flex;
+  /* Reduz o padding para o cabeçalho em telas menores */
+  padding: 0.75rem 1rem; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.59rem;
+  background-color: var(--azul-header);
+  
+  
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  background: var(--cinza-claro-search);
+  width: 68rem;
+  padding: 0.75rem 1rem 0.75rem 0.88rem;
+
+  border: none;
+  border-radius: 0.25rem;
+  gap: 0.75rem;
+
+
+  /*Tirando a borda quando clica*/
+  outline: 0;
+}
+
+#search::placeholder {
+  color: var(--branco);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.avatar {
+  width: 2.63rem;
+  height: 2.63rem;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main img {
+  width: 100%;
+}
+
+main h2 {
+  margin-top: 1.93rem;
+  margin-bottom: 0.5rem;
+}
+
+main button {
+  display: flex;
+  background-color: var(--azul-header);
+  width: 2.5rem;
+  padding: 0.75rem;
+
+  border: none;
+  border-radius: 62.43rem;
+}
+
+.button {
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+main p {
+  color: var(--preto);
+  margin-top: 1.94rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+main h2,
+main p {
+  margin-left: 1.38rem;
+}
+
+.button {
+  margin-left: 1.38rem;
+}
+
+
+.wrapper {
+  margin-left: 1.38rem;
+  color: var(--preto);
+
+  display: grid;
+  grid-template-columns: auto 1fr; 
+  gap: 1rem; 
+  align-items: center; 
+
+}
+
+.wrapper h2 {
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.wrapper img {
+  width: 100%; 
+  grid-column: 2; 
+}
+
+.wrapper p {
+  font-size: 0.875rem;
+  font-weight: 400;
+
+  justify-self: end; 
+}
+
+.wrapper div {
+  border: 2px solid red;
+}
