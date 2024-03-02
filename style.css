@@ -17,19 +17,31 @@
 }
 
 body {
-  /* Define a largura máxima para o conteúdo */
-  max-width: 90rem;
-}
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+
+     /* Define a largura máxima para o conteúdo */
+     min-height: 100vh;
+     margin: 0;
+  }
 
 .header {
   display: flex;
-  /* Reduz o padding para o cabeçalho em telas menores */
+  /*Reduz o padding para o cabeçalho em telas menores */
+  grid-area: header;
+
   padding: 0.75rem 1rem; 
   justify-content: space-between;
   align-items: center;
   gap: 1.59rem;
-  background-color: var(--azul-header);
   
+  background-color: var(--azul-header);
+  color: var(--branco);
   
 }
 
@@ -43,7 +55,6 @@ body {
   border: none;
   border-radius: 0.25rem;
   gap: 0.75rem;
-
 
   /*Tirando a borda quando clica*/
   outline: 0;
@@ -66,8 +77,8 @@ body {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  grid-area: main;
+  
 }
 
 main img {
@@ -94,11 +105,6 @@ main button {
   gap: 0.75rem;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-}
-
 main p {
   color: var(--preto);
   margin-top: 1.94rem;
@@ -116,35 +122,52 @@ main p {
   margin-left: 1.38rem;
 }
 
+aside {
+  grid-area: aside;
+  background-color: var(--cinza-claro-search);
+  padding: 20px;
+}
 
 .wrapper {
-  margin-left: 1.38rem;
-  color: var(--preto);
-
-  display: grid;
-  grid-template-columns: auto 1fr; 
-  gap: 1rem; 
-  align-items: center; 
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .wrapper h2 {
-  font-size: 1.12rem;
+  padding-bottom: 2rem;
+}
+
+.article {
+  display: flex;
+  align-items: center; 
+}
+
+.article img {
+  width: 9.5rem;
+  height: 5.25rem;
+  margin: 0 2rem 0 1rem
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.article h2,
+.article p {
+  margin: 0; 
+  padding: 0;
+}
+
+.article h2 {
+  font-size: 1.13rem;
   font-weight: 700;
 }
 
-.wrapper img {
-  width: 100%; 
-  grid-column: 2; 
-}
-
-.wrapper p {
-  font-size: 0.875rem;
+.article p {
+  font-size: 0.87rem;
   font-weight: 400;
-
-  justify-self: end; 
-}
-
-.wrapper div {
-  border: 2px solid red;
 }
